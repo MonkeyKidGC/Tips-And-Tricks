@@ -4,22 +4,43 @@ using UnityEngine;
 
 public class InstantiateAsChild : MonoBehaviour
 {
-    public GameObject parent;
+    public GameObject prefab;
+    public Transform parent;
+    public Vector2 position;
+    public Quaternion rotation;
 
-    // Start is called before the first frame update
-    void Start()
+    public void childInstantiate()
     {
-        
+        GameObject childGameObject = Instantiate(prefab);
+        childGameObject.name = "Instantiate";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void childInstantiateAsChild()
     {
-        
-    }
-
-    public void childInstantiate(GameObject parent)
-    {
+        GameObject childGameObject = Instantiate(prefab, parent);
+        childGameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,0);
+        childGameObject.name = "InstantiateChild";
 
     }
+
+    public void childInstantiateAsChildWorldSpace()
+    {
+        GameObject childGameObject = Instantiate(prefab, parent, true);
+        childGameObject.GetComponent<SpriteRenderer>().color = new Color(255,0,0);
+        childGameObject.name = "InstantiateWorldSpace";
+    }
+
+    public void childInstantiateWithPositionRotation()
+    {
+        GameObject childGameObject = Instantiate(prefab, position, rotation);
+        childGameObject.GetComponent<SpriteRenderer>().color = new Color(0,255,0);
+        childGameObject.name = "InstantiatePosAndRot";
+    }
+    public void childInstantiateAsChildWithPositionRotation()
+    {
+        GameObject childGameObject = Instantiate(prefab, position, rotation ,parent);
+        childGameObject.GetComponent<SpriteRenderer>().color = new Color(0,0,255);
+        childGameObject.name = "InstantiateChildPosAndRot";
+    }
+
 }
