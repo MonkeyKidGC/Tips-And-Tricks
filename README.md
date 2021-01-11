@@ -7,3 +7,4 @@ Tips and Tricks: Unity Instantiate Prefab as Child of GameObject - https://www.m
 
 Tips and Tricks: Unity Set Parent - https://www.monkeykidgc.com/2020/12/tips-and-tricks-unity-set-parent.html
 
+Tips and Tricks: Unity Spawn a Prefab - https://www.monkeykidgc.com/2021/01/unity-spawn-prefab.html
